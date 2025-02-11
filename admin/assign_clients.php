@@ -1,4 +1,4 @@
-<?php 
+<?php
 include '../components/config.php';
 
 $select_clients = $conn->prepare("SELECT client_info.client_id, client_info.name, client_info.contact, client_info.email, client_info.company_name 
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <th>Contact</th>
           <th>Email</th>
           <th>Company Name</th>
-          <th>Enter staff id to assign clients:</th>
+          <th>Enter staff id to assign clients</th>
           <th></th>
         </tr>
       </thead>
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $select_clients->execute();
         $serialNumber = 1;
         while ($client_row = $select_clients->fetch(PDO::FETCH_ASSOC)) {
-          ?> 
+          ?>
           <tr>
             <form method="post">
             <td class="serial-number"><?= $serialNumber ?></td>
@@ -75,11 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <td><?= $client_row['company_name'] ?></td>
               <td>
                 <input type="hidden" name="staff_id" value="<?php echo $staff_id; ?>">
-                <input class="blue" type="text" name="staff_id">
+                <input class="blue green-border " type="text" name="staff_id">
               </td>
               <td><button type="submit" class="-button green">Update</button></td>
             </form>
-          </tr> 
+          </tr>
           <?php
           $serialNumber++;
         }

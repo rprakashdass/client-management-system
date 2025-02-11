@@ -24,7 +24,7 @@ if(isset($_POST['register'])){
       $pass = sha1($_POST['pass']);
       $pass = filter_var($pass, FILTER_SANITIZE_STRING);
       $cpass = sha1($_POST['cpass']);
-      $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);    
+      $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
       $staff_info = $conn->prepare("SELECT * FROM `staff_info` WHERE email = ?");
       $staff_info->execute([$email]);
@@ -37,7 +37,7 @@ if(isset($_POST['register'])){
      }
      else if($pass != $cpass){
       $prompt[] = 'confirm password not matched!';
-      prompt($prompt);  
+      prompt($prompt);
     }
      else{
         $insert_user = $conn->prepare("INSERT INTO `staff_info`(name, department,email, password) VALUES(?,?,?,?)");

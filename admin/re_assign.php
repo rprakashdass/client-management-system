@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
 
         $delete_clients = $conn->prepare("DELETE FROM `data_maps` WHERE client_id = ?");
-        $delete_clients->execute([$client_id]);        
+        $delete_clients->execute([$client_id]);
 
         $assign_clients = $conn->prepare("INSERT INTO `data_maps` (client_id, staff_id, status_id, date_of_progress) VALUES (?, ?, ?, ?)");
         $assign_clients->execute([$client_id, $staff_id, $status_id, $date_of_prog]);
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <th>Contact</th>
     <th>Email</th>
     <th>Company Name</th>
-    <th>Enter staff id to assign clients:</th>
+    <th>Enter staff id to Re-assign</th>
     <th> </th>
   </tr>
   </thead>
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <td><?= $client_row['company_name'] ?></td>
             <td>
               <input type="hidden" name="staff_id" value="<?php echo $staff_id; ?>">
-              <input class='blue' type='text' name="staff_id">
+              <input class='blue green-border' type='text' name="staff_id">
             </td>
             <td><button type="submit" class='-button green'>Update</button></td>
           </form>

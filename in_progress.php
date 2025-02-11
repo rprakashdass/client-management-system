@@ -52,7 +52,7 @@
               <td>$assign_client[name]</td>
               <td>$assign_client[company_name]</td>
               <td><button type='date' class='-button green'>$client_row[date]</button></td>
-              <td><button type='date' class='-button green'>$client_row[next_contactable]</button></td>
+              <td><input type='date' class='-button green'>{$client_row['next_contactable']}</input></td>
               <td><button class='black sticky-button'>$client_row[s_description]</button></td>
               <td>
                 <a class='-button orange' href='update_status.php?client_id=$client_id'>Update Status</button>

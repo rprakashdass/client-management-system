@@ -8,8 +8,8 @@ do{
 ?>
 <header class="green" style=" height: 200px;">
 <div style="padding: 50px;">
-      <span style="font-size:xxx-large;padding:0"  class="left-align text-yellow"><b>SRI SHAKTHI</b></span><br>
-      <span style="font-size:x-large;"  class="left-align text-yellow">INSTITUTE OF ENGINEERING AND TECHNOLOGY</span><br>
+      <span style="font-size:xxx-large;padding:0"  class="left-align text-yellow"><b>CMS</b></span><br>
+      <span style="font-size:x-large;"  class="left-align text-yellow">Client Management System</span><br>
 </div>
 
 <h1 class="right-assign pointer text-yellow" style="margin-top:120px;" >Welcome Mr.<?= $fetch_profile["name"]; ?></span></h1><br>
